@@ -77,17 +77,7 @@ function moveSelectedchessHere() {
         selectedchess.row = idParts[1]
         selectedchess.cell = idParts[2]
 
-        if(selectedchess.color == `black` && selectedchess.row == 1) {
-            console.log("There is a black chess at the white home")
-            selectedchess.isKing = true;
 
-        }
-
-        if(selectedchess.color == `white` && selectedchess.row == 8) {
-            console.log("There is a white chess at the black home")
-            selectedchess.isWhiteKing = true;
-
-        }
 
         selectedchess = undefined
         renderchesss()

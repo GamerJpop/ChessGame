@@ -59,7 +59,7 @@ function renderchesss() {
 
             } else {
                 console.log(`put`, chess, `into out of play`)
-                $(`#out-of-play-${chesss[i].type}`).append(renderchess(i,chess.color))
+                $(`#out-of-play-${chesss[i].color}`).append(renderchess(i,chess.color))
             }
 
 
@@ -101,7 +101,7 @@ function remove() {
 
     console.log(`removing this`, selectedchess)
     selectedchess.row = 0
-    selectedchess.cell = undefined
+    selectedchess.cell = 0
     selectedchess = undefined
 
     renderchesss()
