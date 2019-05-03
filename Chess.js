@@ -7,14 +7,14 @@ var hi = false;
 var chesss = [
 
 
-    {row: 1, cell: 1, color: 'white', type: 'pawn'},
-    {row: 1, cell: 2, color: 'white', type: 'pawn'},
-    {row: 1, cell: 3, color: 'white', type: 'pawn'},
-    {row: 1, cell: 4, color: 'white', type: 'pawn'},
-    {row: 1, cell: 5, color: 'white', type: 'pawn'},
-    {row: 1, cell: 6, color: 'white', type: 'pawn'},
-    {row: 1, cell: 7, color: 'white', type: 'pawn'},
-    {row: 1, cell: 8, color: 'white', type: 'pawn'},
+    {row: 1, cell: 1, color: 'white', type: 'rook'},
+    {row: 1, cell: 2, color: 'white', type: 'knight'},
+    {row: 1, cell: 3, color: 'white', type: 'bishop'},
+    {row: 1, cell: 4, color: 'white', type: 'king'},
+    {row: 1, cell: 5, color: 'white', type: 'queen'},
+    {row: 1, cell: 6, color: 'white', type: 'bishop'},
+    {row: 1, cell: 7, color: 'white', type: 'knight'},
+    {row: 1, cell: 8, color: 'white', type: 'rook'},
     {row: 2, cell: 1, color: 'white', type: 'pawn'},
     {row: 2, cell: 2, color: 'white', type: 'pawn'},
     {row: 2, cell: 3, color: 'white', type: 'pawn'},
@@ -33,14 +33,14 @@ var chesss = [
     {row: 7, cell: 6, color: 'black', type: 'pawn'},
     {row: 7, cell: 7, color: 'black', type: 'pawn'},
     {row: 7, cell: 8, color: 'black', type: 'pawn'},
-    {row: 8, cell: 1, color: 'black', type: 'pawn'},
-    {row: 8, cell: 2, color: 'black', type: 'pawn'},
-    {row: 8, cell: 3, color: 'black', type: 'pawn'},
-    {row: 8, cell: 4, color: 'black', type: 'pawn'},
-    {row: 8, cell: 5, color: 'black', type: 'pawn'},
-    {row: 8, cell: 6, color: 'black', type: 'pawn'},
-    {row: 8, cell: 7, color: 'black', type: 'pawn'},
-    {row: 8, cell: 8, color: 'black', type: 'pawn'},
+    {row: 8, cell: 1, color: 'black', type: 'rook'},
+    {row: 8, cell: 2, color: 'black', type: 'knight'},
+    {row: 8, cell: 3, color: 'black', type: 'bishop'},
+    {row: 8, cell: 4, color: 'black', type: 'queen'},
+    {row: 8, cell: 5, color: 'black', type: 'king'},
+    {row: 8, cell: 6, color: 'black', type: 'bishop'},
+    {row: 8, cell: 7, color: 'black', type: 'knight'},
+    {row: 8, cell: 8, color: 'black', type: 'rook'},
 
 ]
 
@@ -59,7 +59,7 @@ function renderchesss() {
 
             } else {
                 console.log(`put`, chess, `into out of play`)
-                $(`#out-of-play-pawn`).append(renderchess(i,chess.color))
+                $(`#out-of-play-${chesss[i].type}`).append(renderchess(i,chess.color))
             }
 
 
@@ -71,7 +71,7 @@ function renderchess(i, color, type) {
 
 
     return `<div id="chess-${i}" class="chess ${color}-chess" bacon="${i}">
-          <a><i class="fas fa-chess-pawn" id="typething"></i></a>
+          <a><i class="fas fa-chess-${chesss[i].type}" id="typething"></i></a>
     </div>`
 
 
